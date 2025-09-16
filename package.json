@@ -10,7 +10,7 @@
     "lint": "eslint ./**/*.{js,jsx,ts,tsx,json,css,md}",
     "lint-fix": "pnpm lint --fix",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,json,css,md}'",
-    "cspell": "cspell lint ./**/*.{js,jsx,ts,tsx,md}",
+    "cspell": "cspell lint .",
     "prepare": "pnpm prepare:gitmessage && simple-git-hooks",
     "prepare:gitmessage": "git config --local commit.template \".gitmessage\""
   },

@@ -3,7 +3,7 @@
   "language": "fa,en",
   "useGitignore": true,
   "import": ["@cspell/dict-fa-ir/cspell-ext.json"],
-  "ignorePaths": ["node_modules", "*.json", "*.yaml", "*.svg"],
+  "ignorePaths": ["node_modules", "*.yaml", "*.svg", ".vscode/*"],
   "dictionaryDefinitions": [
     {
       "name": "keywords",
