@@ -1,0 +1,53 @@
+{
+  "files.eol": "\n",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript][typescript][javascriptreact][typescriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "never",
+    "source.fixAll.eslint": "explicit"
+  },
+  "eslint.run": "onSave",
+  "eslint.validate": ["css", "tailwindcss", "javascript", "javascriptreact", "typescript", "typescriptreact"],
+
+  /* Silently auto-fix stylistic rules. */
+  "eslint.rules.customizations": [
+    { "rule": "*styl*", "severity": "off" },
+    { "rule": "*sort*", "severity": "off", "fixable": true },
+    { "rule": "*indent", "severity": "off", "fixable": true },
+    { "rule": "*quotes", "severity": "off", "fixable": true },
+    { "rule": "import*", "severity": "off", "fixable": true },
+    { "rule": "*-spaces", "severity": "off", "fixable": true },
+    { "rule": "*-spacing", "severity": "off", "fixable": true },
+    { "rule": "*newline*", "severity": "off", "fixable": true },
+    { "rule": "attribute*", "severity": "off", "fixable": true }
+  ],
+
+  "files.associations": {
+    "*.svg": "html",
+    "*.css": "tailwindcss"
+  },
+
+  "[git-commit]": {
+    "editor.rulers": [50, 72]
+  },
+
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    ".gitignore": ".gitattributes, .gitmessage",
+    "*.js": "$(capture).js.map, $(capture).*.js",
+    "*.mjs": "$(capture).mjs.map, $(capture).*.mjs",
+    "*.mts": "$(capture).mts.map, $(capture).*.mts",
+    "*.ts": "$(capture).js, $(capture).d.ts.map",
+    ".env": ".env.*",
+    ".cspell.json": "keywords.txt",
+    "next.config.ts": "components.json, middleware.ts, next-env.d.ts",
+    "package.json": "pnpm-lock.yaml, pnpm-workspace.yaml",
+    "eslint.config.mjs": ".prettierignore, .editorconfig, postcss.config.mjs, prettier.config.js, tsconfig.json, .lintstagedrc.json, commitlint.config.cjs, nano-staged.js, simple-git-hooks.json",
+    "README.md": "LICENSE, AUTHORS, CODEOWNERS, CHANGELOG.md, CITATION.cff, CODE_OF_CONDUCT.md, CONTRIBUTING.md, CONTRIBUTORS, COPYING.md, CREDITS, GOVERNANCE.md, HISTORY.md, MAINTAINERS.md, RELEASE_NOTES, SECURITY.md, SPONSORS.md"
+  },
+  "cSpell.words": ["Vazirmatn"]
+}

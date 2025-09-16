@@ -1,0 +1,6 @@
+vazir
+evenodd
+Vazirmatn
+RAISIO
+fullstacksjs
+vercel

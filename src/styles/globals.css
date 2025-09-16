@@ -1,0 +1,22 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "./animations.css";
+@import "./theme.css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* text selection color */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  ::selection {
+    background-color: var(--color-primary);
+    color: var(--color-primary-foreground);
+  }
+  ::-moz-selection {
+    background-color: var(--color-primary);
+    color: var(--color-primary-foreground);
+  }
+}
