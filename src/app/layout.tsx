@@ -2,10 +2,12 @@ import "@/styles/globals.css";
 
 import type { Metadata } from "next";
 
-import { ThemeProvider } from "next-themes";
 import { Vazirmatn } from "next/font/google";
 
+import { ThemeSwitch } from "@/components/theme-switch";
 import { cn } from "@/lib/utils";
+
+import { Providers } from "./providers";
 
 const vazir = Vazirmatn({
   subsets: ["arabic"],
@@ -27,10 +29,15 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function RootLayout({ children }: LayoutProps) {
   return (
     <html dir="rtl" lang="fa" data-scroll-behavior="smooth" suppressHydrationWarning>
-      <body className={cn("bg-background text-foreground flex min-h-screen flex-col", vazir.className)}>
-        <ThemeProvider attribute="class" disableTransitionOnChange>
-          <main>{children}</main>
-        </ThemeProvider>
+      <body className={cn("bg-background text-foreground", vazir.className)}>
+        <Providers>
+          <main className="flex min-h-screen w-full items-center justify-center">
+            {children}
+            <span className="absolute top-0 left-0">
+              <ThemeSwitch />
+            </span>
+          </main>
+        </Providers>
       </body>
     </html>
   );
