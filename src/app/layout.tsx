@@ -4,7 +4,9 @@ import type { Metadata } from "next";
 
 import { Vazirmatn } from "next/font/google";
 
+import { Header } from "@/components/layout/header";
 import { ThemeSwitch } from "@/components/theme-switch";
+import { Toaster } from "@/components/ui/sonner";
 import { cn } from "@/lib/utils";
 
 import { Providers } from "./providers";
@@ -18,10 +20,10 @@ const vazir = Vazirmatn({
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "test project title",
-    description: "test project description",
-    applicationName: "test",
-    keywords: ["test"],
+    title: "Raisio",
+    description: "The Raisio Panel",
+    applicationName: "Raisio",
+    keywords: ["raisio"],
     robots: "index, follow",
   };
 }
@@ -31,12 +33,11 @@ export default async function RootLayout({ children }: LayoutProps) {
     <html dir="rtl" lang="fa" data-scroll-behavior="smooth" suppressHydrationWarning>
       <body className={cn("bg-background text-foreground", vazir.className)}>
         <Providers>
-          <main className="flex min-h-screen w-full items-center justify-center">
+          <main className="min-h-screen">
+            <Header />
             {children}
-            <span className="absolute top-0 left-0">
-              <ThemeSwitch />
-            </span>
           </main>
+          <Toaster />
         </Providers>
       </body>
     </html>

@@ -19,13 +19,13 @@ export const ThemeSwitch = ({ className }: ThemeSwitchProps) => {
   };
 
   return (
-    <Button size="icon" className={className} variant="ghost" onClick={toggleTheme}>
+    <Button size="lg" className={className} variant="ghost" onClick={toggleTheme}>
       <MoonIcon
-        className="fade-in spin-in data-[active=true]:animate-in data-[active=false]:hidden"
+        className="fade-in spin-in !h-6 !w-6 data-[active=true]:animate-in data-[active=false]:hidden"
         data-active={isMounted && resolvedTheme === "dark"}
       />
       <SunIcon
-        className="fade-in spin-in data-[active=true]:animate-in data-[active=false]:hidden"
+        className="fade-in spin-in !h-6 !w-6 data-[active=true]:animate-in data-[active=false]:hidden"
         data-active={isMounted && resolvedTheme === "light"}
       />
     </Button>

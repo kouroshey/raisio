@@ -2,14 +2,11 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Test Project",
-    short_name: "Test",
+    name: "Raisio",
+    short_name: "Raisio",
     icons: [
-      { sizes: "192x192", type: "image/png", src: "/icon/icon-192x192.png" },
-      { sizes: "512x512", type: "image/png", src: "/icon/icon-512x512.png" },
-      { sizes: "1024x1024", type: "image/png", src: "/icon/icon-1024x1024.png" },
-      { sizes: "512x512", type: "image/png", src: "/icon/icon-512x512-maskable.png" },
-      { sizes: "1024x1024", type: "image/png", src: "/icon/icon-1024x1024-maskable.png" },
+      { sizes: "192x192", type: "image/png", src: "/web-app-manifest-192x192.png" },
+      { sizes: "512x512", type: "image/png", src: "/web-app-manifest-512x512.png" },
     ],
 
     display: "standalone",

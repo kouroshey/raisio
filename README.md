@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Raisio
 
-## Getting Started
+A lightweight client-side auth app built with Next.js, TypeScript, and Tailwind CSS for a hiring task. Features a login flow for Iranian users with mobile validation, API integration, and a dashboard.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Login Page**: Validates Iranian mobile numbers (`09xxxxxxxxx`, `+989xxxxxxxxx`, `00989xxxxxxxxx`). Fetches mock user data from [randomuser.me](https://randomuser.me/api/?results=1&nat=us), saves to `localStorage`, redirects to dashboard.
+- **Dashboard**: Shows welcome message with user's name, and logout button (clears `localStorage`, redirects to login).
+- **Auth Guard**: Redirects to login if no user data in `localStorage`.
+- **UI/UX**: Mobile-first, responsive, Persian RTL, accessible (ARIA, focus-visible).
+- **State**: Managed via React Context API.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Next.js 15+ (App Router)
+- TypeScript (strict, no `any`)
+- Tailwind CSS + ShadCN/ui
+- `localStorage` for client-side persistence
+- Regex for mobile validation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Setup & Run
 
-## Learn More
+1. Clone repo:
+   git clone https://github.com/kouroshey/raisio.git
+   cd raisio https://github.com/kouroshey/raisio.git
 
-To learn more about Next.js, take a look at the following resources:
+2. Install:
+   npm install
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Run dev server:
+   npm run dev
+   text- Opens at `http://localhost:3000`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. Build for prod:
+   npm run build && npm run start
 
-## Deploy on Vercel
+## Usage
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Login**: Enter valid Iranian mobile (e.g., `09123456789`), click "Login" → redirects to dashboard.
+- **Dashboard**: Shows user’s name/pic; click "Logout" → back to login.
+- **Notes**: Validates mobile with regex, handles API errors, supports RTL.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deployment
+
+- Deploy to Vercel: Link GitHub repo in Vercel dashboard.
+- Live: [Vercel Link](https://your-app.vercel.app) (replace with actual).
+
+## License
+
+MIT – Free to use/modify.

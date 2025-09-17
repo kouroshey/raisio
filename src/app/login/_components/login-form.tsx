@@ -1,32 +1,29 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
+import { toast } from "sonner";
 
 import { Spinner } from "@/components/spinner";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { localStorageTemplate } from "@/constants";
-import { useLocalStorage } from "@/lib/localstorage";
+import { useAuth } from "@/context/auth-context";
+import { useLocalStorage } from "@/hooks/use-local-storage";
 import { isFieldRequired } from "@/lib/utils";
 
+import type { FormValues } from "../_schema";
+
 import { useGetUserInfo } from "../_api/_hooks";
-
-const iranMobileRe = /^(?:(?:\+98|0098)9\d{9}|09\d{9})$/;
-
-const formSchema = z.object({
-  phone: z.string().regex(iranMobileRe, {
-    message: "شماره تلفن باید یکی از فرمت‌های 09xxxxxxxxx، +989xxxxxxxxx یا 00989xxxxxxxxx باشد.",
-  }),
-});
-
-type FormValues = z.infer<typeof formSchema>;
+import { formSchema } from "../_schema";
 
 export const LoginForm = () => {
   const { mutateAsync: getUserInfo, isPending } = useGetUserInfo();
+  const { login } = useAuth();
   const { set: setToLocal } = useLocalStorage();
+  const router = useRouter();
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -42,9 +39,12 @@ export const LoginForm = () => {
 
   const onSubmit = async (values: FormValues) => {
     const res = await getUserInfo();
-    // if (res.) {
-    //   setToLocal(localStorageTemplate.userData, res)
-    // }
+    if (res) {
+      setToLocal(localStorageTemplate.userData, JSON.stringify(res));
+      // toast("ورود موفقیت آمیز", {style})
+      login(res);
+      router.push("/dashboard");
+    }
     console.log(values);
   };
 
