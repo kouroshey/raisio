@@ -41,7 +41,7 @@ export const LoginForm = () => {
     const res = await getUserInfo();
     if (res) {
       setToLocal(localStorageTemplate.userData, JSON.stringify(res));
-      // toast("ورود موفقیت آمیز", {style})
+      toast("ورود موفقیت آمیز");
       login(res);
       router.push("/dashboard");
     }

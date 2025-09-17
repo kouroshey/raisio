@@ -25,14 +25,14 @@ A lightweight client-side auth app built with Next.js, TypeScript, and Tailwind 
    cd raisio https://github.com/kouroshey/raisio.git
 
 2. Install:
-   npm install
+   pnpm install
 
 3. Run dev server:
-   npm run dev
-   text- Opens at `http://localhost:3000`.
+   pnpm run dev
+   - Opens at `http://localhost:3000`.
 
 4. Build for prod:
-   npm run build && npm run start
+   pnpm run build && pnpm run start
 
 ## Usage
 
