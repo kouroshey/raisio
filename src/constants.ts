@@ -4,5 +4,5 @@ export const localStorageTemplate = {
 
 export const pathTemplate = {
   login: "/login",
-  dashboard: "/dashboard",
+  dashboard: "/",
 };

@@ -9,7 +9,7 @@ import { Spinner } from "@/components/spinner";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { localStorageTemplate } from "@/constants";
+import { localStorageTemplate, pathTemplate } from "@/constants";
 import { useAuth } from "@/context/auth-context";
 import { useLocalStorage } from "@/hooks/use-local-storage";
 import { isFieldRequired } from "@/lib/utils";
@@ -43,7 +43,7 @@ export const LoginForm = () => {
       setToLocal(localStorageTemplate.userData, JSON.stringify(res));
       toast("ورود موفقیت آمیز");
       login(res);
-      router.push("/dashboard");
+      router.push(pathTemplate.dashboard);
     }
     console.log(values);
   };

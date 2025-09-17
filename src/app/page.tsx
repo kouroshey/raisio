@@ -2,8 +2,8 @@ import React from "react";
 
 import { UserDetails } from "./_components/user-details";
 
-const DashboardPage = () => {
+const HomePage = () => {
   return <UserDetails />;
 };
 
-export default DashboardPage;
+export default HomePage;

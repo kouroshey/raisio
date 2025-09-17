@@ -43,7 +43,7 @@ A lightweight client-side auth app built with Next.js, TypeScript, and Tailwind 
 ## Deployment
 
 - Deploy to Vercel: Link GitHub repo in Vercel dashboard.
-- Live: [Vercel Link](https://your-app.vercel.app) (replace with actual).
+- Live: [Vercel Link](https://raisio.vercel.app/).
 
 ## License
 

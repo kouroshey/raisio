@@ -5,7 +5,6 @@ import type { Metadata } from "next";
 import { Vazirmatn } from "next/font/google";
 
 import { Header } from "@/components/layout/header";
-import { ThemeSwitch } from "@/components/theme-switch";
 import { Toaster } from "@/components/ui/sonner";
 import { cn } from "@/lib/utils";
 
@@ -21,7 +20,7 @@ const vazir = Vazirmatn({
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Raisio",
-    description: "The Raisio Panel",
+    description: "پنل کاربری",
     applicationName: "Raisio",
     keywords: ["raisio"],
     robots: "index, follow",
